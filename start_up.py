@@ -35,14 +35,14 @@ if __name__=="__main__":
     tp_api = tweepy.API(auth)
 
     # download your home timeline tweets and print each one of their texts to the console
-    #home_timeline(tp_api)
+    home_timeline(tp_api)
 
     # print user methods
-    #cursor(tp_api)
+    cursor(tp_api)
 
     for md in dir(tp_api):
         print md
-        
+
 
 
 
