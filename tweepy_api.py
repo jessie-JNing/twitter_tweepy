@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 """
-Parse tweets from twitter, start up
+Parse tweets from twitter, use api
 
 @author: Jessie
 
@@ -16,10 +16,11 @@ def home_timeline(api):
     for tweet in public_tweens:
         print tweet.text
 
-def cursor(api):
-
-    user = tweepy.Cursor(api.user_timeline, id="twitter").items(20)
-
+def get_me(api):
+    user = api.me()
+    print "Name:", user.name
+    print "Loaction:", user.location
+    print "Friends:", user.friends_count
 
 
 
@@ -37,11 +38,8 @@ if __name__=="__main__":
     # download your home timeline tweets and print each one of their texts to the console
     home_timeline(tp_api)
 
-    # print user methods
-    cursor(tp_api)
-
-    for md in dir(tp_api):
-        print md
+    # the user whole authentication keys were used
+    get_me(tp_api)
 
 
 
